@@ -1,0 +1,112 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="imagem/svg" href="/img/svgs/logo.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Roboto+Slab:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/dashAluno/mainDashAluno.css">
+  <script src="./js/teste.js"></script>
+
+  <title>Security-nine</title>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        <img src="img/svgs/user.svg" alt="avatar">
+        <span id="b_usuario"></span>
+      </div>
+
+      <div class="pesquisa">
+        <!-- <img src="img/svgs/lupa.svg" alt="lupa"> -->
+        <input type="search" placeholder="pesquisar">
+      </div>
+
+      <div class="sair">
+        <span onclick="logoff()">Logoff</span>
+        <img src="./img/svgs/logout.svg" alt="logout">
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <form name="Pessoas">
+
+        <label for="status">status</label>
+        <input type="text" id="status" name="txtStatus">
+
+        <label for="nome">nome</label>
+        <input type="text" id="nome" name="txtNome">
+
+        <label for="cpu">cpu</label>
+        <input type="text" id="cpu" name="txtCpu">
+
+        <label for="memoria">memoria</label>
+        <input type="text" id="memoria" name="txtMemoria">
+
+        <label for="disco">disco</label>
+        <input type="text" id="disco" name="txtDisco">
+
+        <input type="button" value="Adicionar" onclick=" cadPessoa(
+            status.value, nome.value, cpu.value, memoria.value, disco.value)">
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+
+    <div>
+      <div>
+        <img src="img/svgs/monitor.svg" draggable="false" alt="logo">
+        <h1>Security-Nine</h1>
+      </div>
+      <strong>todos os direitos reservados.</strong>
+    </div>
+
+  </footer>
+
+</body>
+
+
+<thead>
+  <tr>
+    <th>Status</th>
+    <th>Aluno</th>
+    <th>CPU</th>
+    <th>RAM</th>
+    <th>DISCO</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>Ativo</td>
+    <td>Victor Samir</td>
+    <td>Intel core I3</td>
+    <td>8G DDR4</td>
+    <td>500G</td>
+  </tr>
+</tbody>
+
+</html>
+
+
+<script>
+
+  verificar_autenticacao();
+
+</script>

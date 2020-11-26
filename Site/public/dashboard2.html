@@ -1,0 +1,167 @@
+<html lang="pt-br">
+
+<head>
+  <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+  <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+  <style>
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="imagem/svg" href="/img/svgs/logo.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Roboto+Slab:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/dash/mainDash.css">
+
+  <title>Security-nine</title>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        <img src="img/dash/avatar.png" alt="logo">
+        <a href="#"> Ola, <strong id="b_usuario"></strong></a>
+
+      </div>
+
+      <!-- <div class="pesquisa"> 
+        <div class="clique">
+          <div>
+            <img src="img/dash/lupa.png">
+          </div> 
+        </div> 
+
+        <div class="caixa">
+        <input type="text">
+        </div>
+      </div>   -->
+
+
+
+      <!-- <div class="menu2">
+        <div><img src="img/dash/box.png"></div>
+      </div> -->
+
+      <!-- 
+      <div class="menu">
+        <div class="toggle">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+
+      
+
+      </div> -->
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 
+     <div class="graficos">
+      <canvas id="c_grafico"></canvas>
+      <canvas id="r_grafico"></canvas>
+  </div>
+
+  <div class="graficos">
+      <canvas id="h_grafico"></canvas>
+      <canvas id="n_grafico"></canvas>
+  </div>  -->
+
+
+    <div class="graficos">
+
+
+      <div class="meusGraficos">
+
+        <div class="info">
+          <h2> SECURITY <span style="color: blue;">NINE</span></h2>
+          <h2>Aluno selecionado</h2>
+        </div>
+
+
+
+        <div class="linhas">
+          <div class="telas">
+            <h2>CPU: 5% Intel core i3 3110 </h2>
+            <div class="tamanho">
+              <canvas id="c_grafico"></canvas>
+            </div>
+          </div>
+
+
+          <div class="telas">
+            <h2>MEMORIA RAM: 75% 6GB DDR3 8GB</h2>
+            <div class="tamanho">
+              <canvas id="r_grafico"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="linhas">
+
+          <div class="telas">
+            <h2>Memoria RAM: 100% 100 m/s</h2>
+            <div class="tamanho">
+              <canvas id="h_grafico"></canvas>
+            </div>
+          </div>
+
+
+          <div class="telas">
+            <h2>Rede: 30 Mbps</h2>
+            <div class="tamanho">
+              <canvas id="n_grafico"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div>
+      <div>
+        <img src="img/svgs/monitor.svg" draggable="false" alt="logo">
+        <h1>Security-Nine</h1>
+      </div>
+      <strong>todos os direitos reservados.</strong>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
+
+<script src="./js/function.js"></script>
+<script src="./js/grafico1.js"></script>
+<script src="/js/script.js"></script>
+<script src="./js/graficoMEMORIAmaquina.js"></script>
+
+<script>
+
+  verificar_autenticacao();
+
+</script>

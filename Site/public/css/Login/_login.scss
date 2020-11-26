@@ -1,0 +1,178 @@
+.container {
+  @include flex-direction(column);
+  position       : relative;
+  justify-content: center;
+  height         : 100vh;
+}
+
+#div_erro {
+  @include flex-direction(row);
+  justify-content: space-around;
+
+  display: none;
+
+  visibility: hidden;
+  opacity   : 0;
+
+  position: absolute;
+  top     : 0;
+  right   : 0;
+
+  width : 350px;
+  height: 80px;
+
+  margin: 20px 15px;
+
+  animation      : notification 3s;
+  animation-delay: 1s;
+  border-radius  : 5px;
+
+  color           : $primary-color-tx;
+  background-color: darken($secundary-color, 10);
+
+  img {
+    width: 45px;
+  }
+
+  h4 {
+    @include font-size(18);
+  }
+
+  @keyframes notification {
+    0% {
+      visibility: hidden;
+      opacity   : 0;
+    }
+
+    15% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    50% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    85% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    100% {
+      visibility: hidden;
+      opacity   : 0;
+    }
+  }
+}
+
+
+.barra {
+  opacity: 0;
+
+  height       : 20px;
+  border-radius: 5px;
+
+  animation : progress 1s infinite;
+  background: $secundary-color;
+
+  @keyframes progress {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 1120px;
+    }
+  }
+}
+
+.login {
+  @include flex-direction(row);
+
+  height : 550px;
+  padding: 3%;
+
+  border-radius: 5px;
+  box-shadow   : 0 0 35px rgba(0, 0, 0, 0.3);
+
+  .box-lefth {
+    margin-right: 80px;
+
+    img {
+      width: 650px;
+    }
+  }
+
+  .box-rigth {
+    @include flex-direction(column);
+    position: relative;
+
+    margin-right: 20px;
+
+    color: #000;
+
+    h2 {
+      @include font-size(42);
+      margin-top: -10%;
+    }
+
+    form {
+      @include flex-direction(column);
+      margin-top: 20%;
+
+      label {
+        @include font-size(18);
+
+        margin-right : 180px;
+        margin-bottom: -10px;
+
+        font-weight: bold;
+        color      : $secundary-color;
+      }
+
+      input {
+        position: relative;
+        width   : 240px;
+        height  : 45px;
+
+        padding     : 5px;
+        padding-left: 20px;
+
+        border: 1px solid rgba(0, 0, 0, 0.295);
+
+        border-radius: 3px;
+
+        margin: 5% 0;
+        cursor: text;
+      }
+
+      input[type='submit'] {
+
+        width : 200px;
+        height: 45px;
+
+        padding-left: 0;
+
+        cursor: pointer;
+
+        color: white;
+
+        &:hover {
+          background: darken($secundary-color, 30);
+        }
+      }
+
+    }
+
+    a {
+      font-weight: 500;
+      color      : $secundary-color-tx;
+
+      &:hover {
+        color: $secundary-color;
+      }
+    }
+  }
+
+}

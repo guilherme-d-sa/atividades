@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Roboto+Slab:wght@400;500;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/cadastro/mainCadastro.css">
+
+  <script src="/js/script.js"></script>
+  <title>Security-nine</title>
+</head>
+
+<body>
+
+  <main>
+
+    <div class="container">
+
+      <div id="div_erro">
+        <img src="/img/svgs/erro.svg" alt="">
+        <h4 id="msg"></h4>
+      </div>
+
+      <section class="cadastro">
+        <h2>Security <span> Nine </span></h2>
+
+        <a href="/login.html"> <img draggable="false" src="/img/svgs/seta.svg" alt="seta"></a>
+
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+          <div class="box-left">
+
+            <h4>Informações Pessoais</h4>
+
+            <label for="nome">Nome</label>
+            <input id='nome' name="nome" type="text" placeholder="Your Name" autofocus required>
+
+            <label for="email">Email</label>
+            <input id='email' name="login" type="email" placeholder="exemple@exemple.com" required>
+
+
+          </div>
+
+          <div class="box-rigth">
+
+            <h4>Informações de Acesso</h4>
+
+            <label for="login">Login</label>
+            <input id='login' name="email" type="text" placeholder="user123" required>
+
+            <label for="password">Senha</label>
+            <input id='password' name="senha" type="password" placeholder="Password" required>
+          </div>
+
+          <h4>Informações Instucionais</h4>
+
+          <div class="codigo">
+
+            <div>
+              <label for="codigo">Código</label>
+              <input id='codigo' type="text" placeholder="02xxxx" required>
+            </div>
+
+            <div>
+              <label for="telefone">Telefone</label>
+              <input id='telefone' name="telefone" data-js="tell" type="text" placeholder="-" required>
+            </div>
+          </div>
+
+          <input type="submit" value="cadastrar">
+
+        </form>
+
+      </section>
+
+    </div>
+  </main>
+
+
+</body>
+
+</html>
+<script>
+  verificar_autenticacao();
+  function cadastrar() {
+    let valor_email = email.value;
+    valor_email.trimStart();
+    valor_email.trimEnd();
+    let pegar_senha = password.value;
+    //let pegar_senha2 = senha2.value;
+    if (valor_email.indexOf('@') > 0 && valor_email.indexOf('.') > 0 && valor_email.length >= 7) {
+      div_erro.style.display = 'flex';
+      msg.innerHTML = 'Cadastro feito com sucesso';
+      // window.location.href = './login.html';
+    } else {
+      div_erro.style.display = 'flex';
+      msg.innerHTML = 'senha ou email podem estar inválidos';
+    }
+
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
+
+      if (response.ok) {
+
+        window.location.href = 'login.html';
+
+      } else {
+
+        console.log('Erro de cadastro!');
+        response.text().then(function (resposta) {
+          div_erro.innerHTML = "erro ao realizar cadastro";
+        });
+      }
+    });
+
+    return false;
+  }
+
+</script>

@@ -1,0 +1,57 @@
+header {
+  position: absolute;
+  top     : 0;
+
+  width: 100%;
+}
+
+/*----------  NAVBAR  ----------*/
+
+nav {
+  @include flex-direction (row);
+  height     : 70px;
+  padding-top: 5px;
+
+  border-bottom: 3px solid $secundary-color;
+
+
+  background: rgba(0, 0, 0, 0.2);
+
+  .logo {
+    @include flex-direction (row);
+    margin-left: 5%;
+
+    img {
+      width       : 32px;
+      margin-right: 10px;
+    }
+
+    a {
+      @include font-size(27);
+      font-weight: 500;
+    }
+  }
+
+  .menu {
+    margin-right: 3%;
+
+    ul {
+      @include flex-direction (row);
+
+      li {
+        padding      : 10px 25px;
+        margin-left  : 10px;
+        border-radius: 5px;
+
+        a {
+          @include font-size(25);
+
+          span {
+            cursor: pointer;
+          }
+
+        }
+      }
+    }
+  }
+}

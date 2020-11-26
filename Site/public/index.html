@@ -1,0 +1,198 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="imagem/svg" href="/img/svgs/monitor.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Roboto+Slab:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/home/mainHome.css">
+
+  <title>Security-nine</title>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        <img src="img/svgs/monitor.svg" draggable="false" alt="logo">
+        <a href="#">Security-Nine</a>
+      </div>
+
+      <div class="menu">
+        <div class="toggle">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+
+        <ul id="ul-none">
+          <li><a> <span> Home </span> </a></li>
+          <li><a href="/login.html"> Login</a></li>
+        </ul>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="conhecer">
+
+      <h1 id="texto-digitado">Suas aulas mais produtivas </h1>
+
+      <p>
+        Com o monitoramento da Security-Nine, garantimos que os estagiários da BandTec
+        não terão maiores problemas com as aulas virtuais e com o home office!
+      </p>
+
+      <a href="#projeto"><button class="btn-base">Conhecer</button></a>
+
+    </div>
+
+    <section id="projeto" class="projeto">
+
+      <div class="textos-projeto">
+        <h1> Seus alunos ficam ausentes nas aulas?</h1>
+
+        <h4>A <span>Sercurity-nine</span> te ajuda</h4>
+
+        <p>
+          Seus Alunos podem estar sofrendo com o home office, com a Security-nine você pode monitorar a maquina
+          deles, assim podendo saber se tem alguma irregularidade de Memória, se a CPU (Unidade Pentral de
+          Processamento)
+        </p>
+        <p>
+          Está sofrendo Com Problemas de Rede, ela anda mais lenta que o normal A Security-nine te
+          ajuda.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="produtos">
+
+      <div class="textos-produtos">
+
+        <h1>Monitoramento <span>Nine</span></h1>
+
+        <p>
+          O monitoramento <span>Nine</span>, consiste em monitorar de forma bem limpa e facil, o seu hardware ea rede
+          dos
+          seus alunos, para garantir que ele realize suas atividades com mais facilidade e segurança.
+        </p>
+        <p>
+          Abaixo explicaremos um pouco sobre cada componente que nós iremos monitorar.
+        </p>
+
+      </div>
+
+      <div class="produto cpu ">
+
+        <div class="texto-cpu">
+          <h2>Central Process Unit (CPU)</h2>
+
+          <p>
+            CPU é a sigla para Central Process Unit, ou Unidade Central de Processamento.
+            Ele é o principal item de hardware do computador, que também é conhecido como processador.
+          </p>
+        </div>
+
+        <img class="img-circular"
+          src="https://images.tcdn.com.br/img/img_prod/679622/processador_xeon_3_2ghz_800mhz_1mb_intel_0_m_ppga604_1016_1_20190203093312.jpg"
+          alt="cpu-intel">
+
+      </div>
+
+      <div class="produto disco">
+
+        <div class="textos-disco">
+          <h2>Disco Rigido (HDD)</h2>
+
+          <p>
+            O disco Rigido também conhecido com HDD, é a sigla para Hard Disk Drive. Trata-se de um dispositivo de
+            armazenamento
+          </p>
+        </div>
+
+        <img class="img-circular"
+          src="https://netzapinformatica.com.br/blog/wp-content/uploads/2014/11/Disco-rigido.jpg" alt="disco-HDD">
+
+      </div>
+
+      <div class="produto memoria">
+        <div class="textos-memoria">
+          <h2>memoria RAM</h2>
+
+          <p>
+            A memoria RAM é usada pelo processador para armazenar os arquivos e programas que estão sendo processados.
+          </p>
+        </div>
+        <img class="img-circular"
+          src="https://images.tcdn.com.br/img/img_prod/635021/kllisre_ddr3_8gb_1600mhz_dissipador_memoria_ram_pc_gamer_2901_1_20190218120125.jpg"
+          alt="memoria-intel">
+
+
+      </div>
+
+      <div class="produto rede">
+        <div class="textos-rede">
+          <h2>Rede Wireless</h2>
+
+          <p>
+            Rede wireless também conhecida como rede sem fio é uma forma de conexão entre dois ou mais dispositivos sem
+            a utilização de cabos.
+          </p>
+        </div>
+        <img class="img-circular"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE8iHEHy7QMRyoON9yo88Yuw8uoFONw2c9rw&usqp=CAU"
+          alt="memoria-intel">
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+
+    <div>
+      <div>
+        <img src="img/svgs/monitor.svg" draggable="false" alt="logo">
+        <h1>Security-Nine</h1>
+      </div>
+      <strong>todos os direitos reservados.</strong>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
+
+
+<script>
+  const titulo = document.querySelector("#texto-digitado");
+  //fazer o efeito de digitação
+  const digitando = elemento => {
+    const textoArray = elemento.innerHTML.split('');
+    elemento.innerHTML = '';
+
+    textoArray.forEach((letra, i) => {
+      setTimeout(() => elemento.innerHTML += letra, 90 * i);
+    });
+  }
+
+  digitando(titulo);
+
+</script>
+
+<script src="/js/script.js"></script>

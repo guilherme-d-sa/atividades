@@ -1,0 +1,13 @@
+@import "../variaveis";
+@import "../base";
+
+@import "../components/header";
+@import "./dashAluno";
+
+@import "../components/footer";
+@import "../components/mobile";
+
+
+nav {
+  background: rgba(0, 0, 0, 0.9);
+}

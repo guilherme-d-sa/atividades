@@ -1,0 +1,197 @@
+.container {
+  @include flex-direction(column);
+  justify-content: center;
+  height         : 100vh;
+
+  color: #000;
+}
+
+#div_erro {
+  @include flex-direction(row);
+  justify-content: space-around;
+
+  display: none;
+
+  visibility: hidden;
+  opacity   : 0;
+
+  position: absolute;
+  top     : 0;
+  right   : 0;
+
+  width : 350px;
+  height: 80px;
+
+  margin: 20px 15px;
+
+  animation      : notification 3s;
+  animation-delay: 1s;
+  border-radius  : 5px;
+
+  color           : $primary-color-tx;
+  background-color: darken($secundary-color, 10);
+
+  img {
+    width: 45px;
+  }
+
+  h4 {
+    @include font-size(18);
+  }
+
+  @keyframes notification {
+    0% {
+      visibility: hidden;
+      opacity   : 0;
+    }
+
+    15% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    50% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    85% {
+      visibility: visible;
+      opacity   : 1;
+    }
+
+    100% {
+      visibility: hidden;
+      opacity   : 0;
+    }
+  }
+}
+
+
+.cadastro {
+  position: relative;
+  width   : 530px;
+  height  : 620px;
+
+  padding: 2% 1%;
+
+  border-radius: 3px;
+  box-shadow   : 0 0 35px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    @include font-size(42);
+    margin-bottom : 20px;
+    letter-spacing: 3px;
+  }
+
+  img {
+    width: 25px;
+
+    position: absolute;
+    top     : 36px;
+    left    : -50px;
+
+    transition: all 150ms ease-in;
+    cursor    : pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+form {
+  @include flex-direction(row);
+  align-items    : flex-start;
+  justify-content: space-around;
+
+  position: relative;
+  width   : 100%;
+  height  : 88%;
+
+  .box-left {
+    @include flex-direction(column);
+  }
+
+  .box-rigth {
+    @include flex-direction(column);
+  }
+
+  h4 {
+    @include font-size(19);
+
+    font-weight  : 600;
+    margin-bottom: 15px;
+
+    &:nth-last-child(3) {
+      margin-top   : 5px;
+      margin-bottom: -10px;
+    }
+
+  }
+
+  label {
+    margin-bottom: -10px;
+    margin-left  : -150px;
+
+    font-weight: bold;
+    color      : $secundary-color;
+  }
+
+  input {
+    width : 220px;
+    height: 40px;
+
+    @include font-size (14);
+
+    padding     : 5px;
+    padding-left: 15px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    border-radius: 2px;
+
+    margin: 4% 0;
+    cursor: text;
+
+  }
+
+  input[type='submit'] {
+
+    width : 200px;
+    height: 45px;
+
+    padding: 0;
+
+    @include font-size (17);
+    font-weight: bold;
+
+    background: $secundary-color;
+    color     : white;
+
+    transition: all 170ms ease-in;
+    cursor    : pointer;
+
+    &:hover {
+      background: darken($secundary-color, 30);
+    }
+  }
+
+
+  .codigo {
+    width: 100%;
+
+    @include flex-direction(row);
+
+    justify-content: space-around;
+
+    div {
+      @include flex-direction(column);
+    }
+
+  }
+
+
+
+
+}

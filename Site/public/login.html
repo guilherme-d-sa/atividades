@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="imagem/svg" href="/img/svgs/logo.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Roboto+Slab:wght@400;500;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/Login/main.css">
+  <title>Security-nine</title>
+</head>
+
+<body>
+
+  <main>
+
+    <div class="container">
+
+      <div id="div_erro">
+        <img src="/img/svgs/erro.svg" alt="">
+        <h4> Usuario não encontrado</h4>
+      </div>
+
+      <div id="img_aguarde" class="barra"></div>
+
+      <section class="login">
+
+        <div class="box-lefth">
+
+          <img src="/img/svgs/login.svg" alt="login">
+
+        </div>
+
+        <div class="box-rigth">
+
+          <h2>Security <span> Nine </span></h2>
+
+          <div class="form">
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+
+              <label for="email">Login</label>
+              <input id='email' name="login" placeholder="@loginexemplo" autofocus required>
+
+              <label for="password">Senha</label>
+              <input id='password' name="senha" type="password" autofocus required>
+
+              <input id="btn_entrar" class="btn-base" type="submit" value="Entrar">
+
+            </form>
+
+          </div>
+
+          <a href="/cadastro.html">Não possui cadastro ?</a>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
+
+<script>
+  function entrar() {
+
+    aguardar();
+
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      body: formulario
+    }).then(resposta => {
+
+      if (resposta.ok) {
+        resposta.json().then(json => {
+
+          sessionStorage.login_usuario_meuapp = json.loginProfessor;
+          sessionStorage.nome_usuario_meuapp = json.nomeProfessor;
+
+          window.location.href = './dashboard.html';
+        });
+
+      } else {
+        img_aguarde.style.animation = 'progress 0.5s ease-in-out'
+
+        div_erro.style.display = 'flex';
+
+        console.log('Erro de login!');
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 4500);
+
+        response.text().then(texto => {
+          console.error(texto);
+          finalizar_aguardar(texto);
+        });
+      }
+    });
+
+    return false;
+  }
+  function aguardar() {
+    btn_entrar.disabled = true;
+    img_aguarde.style.opacity = '1';
+  }
+  function finalizar_aguardar(resposta) {
+    btn_entrar.disabled = false;
+    div_erro.innerHTML = resposta;
+  }
+</script>

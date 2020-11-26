@@ -1,0 +1,92 @@
+/*----------  GERAL  ----------*/
+* {
+  margin : 0;
+  padding: 0;
+  outline: 0;
+
+  box-sizing: border-box;
+  cursor    : default;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font                  : 400 16px 'Poppins', serif;
+  text-rendering        : optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  color     : $primary-color-tx;
+  background: $primary-color;
+}
+
+/*----------  IMAGEM  ----------*/
+
+img {
+  display: block;
+  border : none;
+
+  max-width: 100%;
+  width    : 200px;
+}
+
+/*----------  LINK A  ----------*/
+
+a {
+  text-decoration: none;
+  cursor         : pointer;
+  color          : $primary-color-tx;
+  transition     : all 170ms ease-in;
+
+  &:hover {
+    color          : darken($secundary-color, 0);
+    text-decoration: none;
+  }
+}
+
+
+/*----------  TEXTOS ----------*/
+
+span {
+  color: darken($secundary-color, 10);
+}
+
+p {
+  @include font-size(18);
+  text-align    : justify;
+  color         : $secundary-color-tx;
+  // line-height: 18px * 1.5;
+}
+
+h2 {
+  @include font-size (35);
+  margin-bottom: 3%;
+  text-align   : center;
+  color        : $secundary-color-tx;
+}
+
+/*----------  BOTÂO PADRÃO  ----------*/
+
+.btn-base {
+  width  : 135px;
+  height : 50px;
+  padding: 5px;
+
+  border       : none;
+  border-radius: 3px;
+
+  @include font-size (20);
+  font-weight: 500;
+
+  cursor    : pointer;
+  transition: all 0.4s ease;
+
+  color     : $primary-color-tx;
+  background: darken($secundary-color, 5);
+
+  &:hover {
+    color     : $secundary-color-tx;
+    background: $primary-color-tx;
+  }
+}
