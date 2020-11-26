@@ -1,14 +1,15 @@
-atualizarMemoria();
-
+// Função p/ plotar o gráfico
 function plotarMemoria(tempoLeitura, leituraUsoPorc) {
   var ctx = document.getElementById("r_grafico").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "line",
     data: {
+      // eixo X
       labels: tempoLeitura,
       datasets: [
         {
           label: "% de utilização memória",
+          // eixo Y
           data: leituraUsoPorc,
           fill: true,
           backgroundColor: "rgba(170, 120, 166, 0.30)",
@@ -41,13 +42,16 @@ function atualizarMemoria() {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           let leitura = resposta;
           console.log(leitura);
-          console.log(rs.Fields.Count);
+          // quantidade de elementos dentro da lista
+          console.log(leitura.recordsets[0].length);
+          // variavel do eixo y
           let leituraUsoPorc = [];
+          // variavel do eixo x
           let tempoLeitura = [];
 
-          for (n = leitura.length - 1; n >= 0; n--) {
-            leituraUsoPorc.push(leitura[n].consumoComponente);
-            tempoLeitura.push(leitura[n].registro);
+          for (n = leitura.recordsets[0].length - 1; n >= 0; n--) {
+            leituraUsoPorc.push(leitura.recordsets[0][n].consumoComponente);
+            tempoLeitura.push(leitura.recordsets[0][n].registro);
           }
           console.log(leituraUsoPorc);
 
@@ -62,6 +66,6 @@ function atualizarMemoria() {
     });
 
   setTimeout(() => {
- //   atualizarMemoria();
+   atualizarMemoria();
   }, 5000);
 }

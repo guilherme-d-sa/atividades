@@ -151,7 +151,7 @@ router.get('/estatisticas/:linha/:momento1/:momento2', function (req, res, next)
 });
 
 router.get('/dadosMemoriaUsoPerc', (request, response) => {
-    var sql = `SELECT top(10) idComponenteMaquina,fkComponente,consumoComponente,registro from [dbo].[ComponenteMaquina] where fkComponente = 6 order by idComponenteMaquina desc;`;
+    var sql = `SELECT top(10) idComponenteMaquina,fkComponente,consumoComponente, registro from [dbo].[ComponenteMaquina] where fkComponente = 6 order by idComponenteMaquina desc;`;
     db.query(sql, function (err, result) {
         if (err) throw err;
         response.json(result);
