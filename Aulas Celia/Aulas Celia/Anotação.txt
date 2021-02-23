@@ -1,0 +1,19 @@
+Fila
+inserção na fila é sempre por uma extremidade do vetor(fim da fila)
+remoção da fila é sempre pela outra extremidade do vetor(incio da fila)
+
+Pilha
+inserção e a remoção da pilha é sempre feita pela mesma extremidade(topo)
+
+Diferença de pilha,lista e fila.
+
+Recursividade é um metodo que chama ele mesmo em loop.
+
+Classe é a forma
+Objeto é a representação dentro do sistema de alguma coisa do mundo real
+
+Alt+Insert para criar construtor
+
+Uma classe abstrata pode ter construtor.
+
+
